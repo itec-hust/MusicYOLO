@@ -115,7 +115,7 @@ python3 tools/train.py -f exps/example/custom/yolox_singing.py -d 1 -b 16 --fp16
 
 ### Train on MIR-ST500 (get musicyolo1)
 
-### Prepair note object detection dataset
+#### Prepair note object detection dataset
 Because there are a few audios for SSVD training set, we use Labelme software to annotate note object manually. There are a lot of data in MIR-ST500 training set, so we design a set of automatic annotation tools.
 
 Step1. Audio source seperation
@@ -150,9 +150,9 @@ python3 tools/util/labelme2coco.py --annotationpath $YOU_MIR_ST500_IMAGES/valid 
 
 then put the MIR-ST500 note object detection dataset under the datasets folder like SSVD.
 
-### Train
+#### Train
 
-the similar process like train on SSVD dataset.
+the similar process like training on SSVD dataset.
 
 ## Citation
 
