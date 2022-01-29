@@ -81,22 +81,6 @@ Step5. Evaluate
 python3 tools/note_eval.py --label $MIR_ST500_TEST_LABEL_PATH --result $MERGE_PATH --offset
 ```
 
-Step1. Download a pretrained model from the benchmark table.
-
-Step2. Use either -n or -f to specify your detector's config. For example:
-
-```shell
-python3 tools/demo.py image -n yolox-s -c /path/to/your/yolox_s.pth --path assets/dog.jpg --conf 0.25 --nms 0.45 --tsize 640 --save_result --device [cpu/gpu]
-```
-or
-```shell
-python3 tools/demo.py image -f exps/default/yolox_s.py -c /path/to/your/yolox_s.pth --path assets/dog.jpg --conf 0.25 --nms 0.45 --tsize 640 --save_result --device [cpu/gpu]
-```
-Demo for video:
-```shell
-python3 tools/demo.py video -n yolox-s -c /path/to/your/yolox_s.pth --path /path/to/your/video --conf 0.25 --nms 0.45 --tsize 640 --save_result --device [cpu/gpu]
-```
-
 ## Train yourself
 
 Download yolox-s weight from https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.pth . Put the model weight under models folder.
@@ -107,7 +91,7 @@ Step1. Get SSVD train set
 
 Download SSVD-v2.0 from https://github.com/xk-wang/SSVD-v2.0. Put the images folder under the datasets folder.
 
-Step2. Train:
+Step2. Train
 
 ```shell
 python3 tools/train.py -f exps/example/custom/yolox_singing.py -d 1 -b 16 --fp16 -o -c models/yolox_s.pth
@@ -116,6 +100,7 @@ python3 tools/train.py -f exps/example/custom/yolox_singing.py -d 1 -b 16 --fp16
 ### Train on MIR-ST500 (get musicyolo1)
 
 #### Prepair note object detection dataset
+
 Because there are a few audios for SSVD training set, we use Labelme software to annotate note object manually. There are a lot of data in MIR-ST500 training set, so we design a set of automatic annotation tools.
 
 Step1. Audio source seperation
